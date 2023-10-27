@@ -18,7 +18,7 @@ class DataIngestion:
         self.data_ingestion_config=DataIngestionConfig()
     def initiate_data_ingestion(self):
         try:
-            raw_data=pd.read_csv('D:\Laptop_Price_Prediction\notebooks\laptop_cleaned_dataset.csv')
+            raw_data=pd.read_csv('notebooks\laptop_cleaned_dataset.csv')
             logging.info('dataset is successfully taken')
             train_data,test_data=train_test_split(raw_data,test_size=0.20,random_state=42)
             logging.info('train test split is completed')

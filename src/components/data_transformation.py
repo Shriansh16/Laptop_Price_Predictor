@@ -41,8 +41,8 @@ class DataTransformation:
             input_train_trans=preprocessor_obj.fit_transform(input_train_features)
             input_test_trans=preprocessor_obj.transform(input_test_features)
             logging.info('TRANSFORAMTION DONE')
-            train_arr=np.c_(input_train_trans,np.array(output_train_features))
-            test_arr=np.c_(input_test_trans,np.array(output_test_features))
+            train_arr=np.c_[input_train_trans,np.array(output_train_features)]
+            test_arr=np.c_[input_test_trans,np.array(output_test_features)]
             save_object(self.data_transformation_config.preprocessor_path,preprocessor_obj)
             return (train_arr,test_arr)
         except Exception as e:

@@ -9,7 +9,7 @@ from sklearn.metrics import r2_score
 def save_object(path,object):
     try:
         dir_path=os.path.dirname(path)
-        os.makedirs(dir_path)
+        os.makedirs(dir_path,exist_ok=True)
         
         with open(path,'wb') as file_obj:
             pickle.dump(object,file_obj)

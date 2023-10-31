@@ -7,6 +7,7 @@ from logger import logging
 from exception import CustomException
 from utils import *
 from dataclasses import dataclass
+from scipy.sparse import csr_matrix
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.compose import ColumnTransformer
@@ -33,15 +34,20 @@ class DataTransformation:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
             preprocessor_obj=self.get_data_transformation()
-            input_train_features=train_df.drop('Price',axis=1)
+            input_train_features=train_df.drop(columns=['Price'],axis=1)
             output_train_features=train_df['Price']
-            input_test_features=test_df.drop('Price',axis=1)
+            input_test_features=test_df.drop(columns=['Price'],axis=1)
             output_test_features=test_df['Price']
             logging.info('TRANSFORMATION STARTED')
             input_train_trans=preprocessor_obj.fit_transform(input_train_features)
             input_test_trans=preprocessor_obj.transform(input_test_features)
-            logging.info('TRANSFORAMTION DONE')
+            logging.info('TRANSFORAMTION DONE')          
+            logging.info(output_train_features.shape)
+            logging.info(input_train_trans.shape)
+            input_train_trans = input_train_trans.toarray()
+            input_test_trans=input_test_trans.toarray()
             train_arr=np.c_[input_train_trans,np.array(output_train_features)]
+            logging.info('1')
             test_arr=np.c_[input_test_trans,np.array(output_test_features)]
             save_object(self.data_transformation_config.preprocessor_path,preprocessor_obj)
             return (train_arr,test_arr)

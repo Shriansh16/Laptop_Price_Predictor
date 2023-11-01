@@ -20,11 +20,12 @@ def predict_datapoint():
     
     else:
         data=CustomData(
-            Company=float(request.form.get('Company')),
-            TypeName = float(request.form.get('TypeName')),
-            Ram = float(request.form.get('Ram')),
+            Company=request.form.get('Company'),
+            TypeName = request.form.get('TypeName'),
+            Ram = int(request.form.get('Ram')),
             Weight = float(request.form.get('Weight')),
-            Touchscreen = float(request.form.get('Touchscreen')),
+            Touchscreen = int(request.form.get('Touchscreen')),
+            IPS=int(request.form.get('IPS')),
             ppi = float(request.form.get('ppi')),
             CPU_BRAND = request.form.get('CPU_BRAND'),
             HDD= request.form.get('HDD'),

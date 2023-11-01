@@ -32,6 +32,7 @@ class CustomData:
                  Ram:int,
                  Weight:float,
                  Touchscreen:int,
+                 IPS:int,
                  ppi:float,
                  CPU_BRAND:str,
                  HDD:int,
@@ -44,6 +45,7 @@ class CustomData:
             self.Ram=Ram
             self.Weight=Weight
             self.Touchscreen=Touchscreen
+            self.IPS=IPS
             self.ppi=ppi
             self.CPU_BRAND = CPU_BRAND
             self.HDD = HDD
@@ -59,6 +61,7 @@ class CustomData:
                 'Ram':[self.Ram],
                 'Weight':[self.Weight],
                 'Touchscreen':[self.Touchscreen],
+                'IPS':[self.IPS],
                 'ppi':[self.ppi],
                 'CPU_BRAND':[self.CPU_BRAND],
                 'HDD':[self.HDD],

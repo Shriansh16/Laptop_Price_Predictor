@@ -27,38 +27,44 @@ class Predict_Pipeline:
 
 class CustomData:
         def __init__(self,
-                 carat:float,
-                 depth:float,
-                 table:float,
-                 x:float,
-                 y:float,
-                 z:float,
-                 cut:str,
-                 color:str,
-                 clarity:str):
+                 Company:str,
+                 TypeName:str,
+                 Ram:int,
+                 Weight:float,
+                 Touchscreen:int,
+                 ppi:float,
+                 CPU_BRAND:str,
+                 HDD:int,
+                 SSD:int,
+                 GPU_BRAND:str,
+                 OS:str):
         
-            self.carat=carat
-            self.depth=depth
-            self.table=table
-            self.x=x
-            self.y=y
-            self.z=z
-            self.cut = cut
-            self.color = color
-            self.clarity = clarity
+            self.Company=Company
+            self.TypeName=TypeName
+            self.Ram=Ram
+            self.Weight=Weight
+            self.Touchscreen=Touchscreen
+            self.ppi=ppi
+            self.CPU_BRAND = CPU_BRAND
+            self.HDD = HDD
+            self.SSD = SSD
+            self.GPU_BRAND=GPU_BRAND
+            self.OS=OS
 
         def get_data_as_dataframe(self):
             try:
                 custom_data_input_dict = {
-                'carat':[self.carat],
-                'depth':[self.depth],
-                'table':[self.table],
-                'x':[self.x],
-                'y':[self.y],
-                'z':[self.z],
-                'cut':[self.cut],
-                'color':[self.color],
-                'clarity':[self.clarity]
+                'Company':[self.Company],
+                'TypeName':[self.TypeName],
+                'Ram':[self.Ram],
+                'Weight':[self.Weight],
+                'Touchscreen':[self.Touchscreen],
+                'ppi':[self.ppi],
+                'CPU_BRAND':[self.CPU_BRAND],
+                'HDD':[self.HDD],
+                'SSD':[self.SSD],
+                'GPU_BRAND':[self.GPU_BRAND],
+                'OS':[self.OS]
                  }
                 df = pd.DataFrame(custom_data_input_dict)
                 logging.info('Dataframe Gathered')

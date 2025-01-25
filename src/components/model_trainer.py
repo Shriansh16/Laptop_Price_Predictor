@@ -2,10 +2,9 @@ import pandas as pd
 import numpy as np
 import os
 import sys
-sys.path.insert(0, 'D:\Laptop_Price_Prediction\src')
-from logger import logging
-from exception import CustomException
-from utils import *
+from src.logger import logging
+from src.exception import CustomException
+from src.utils import *
 from dataclasses import dataclass
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor

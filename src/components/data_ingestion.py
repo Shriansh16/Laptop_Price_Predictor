@@ -3,9 +3,8 @@ import sys
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-sys.path.insert(0, 'D:\Laptop_Price_Prediction\src')
-from logger import logging
-from exception import CustomException
+from src.logger import logging
+from src.exception import CustomException
 from dataclasses import dataclass
 
 @dataclass

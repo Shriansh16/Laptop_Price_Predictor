@@ -1,12 +1,11 @@
 import os
 import sys
 import pandas as pd
-sys.path.insert(0, 'D:\Laptop_Price_Prediction\src')
-from logger import logging
-from exception import CustomException
-from utils import *
-from components.data_ingestion import DataIngestion
-from components.data_transformation import DataTransformation
+from src.logger import logging
+from src.exception import CustomException
+from src.utils import *
+from src.components.data_ingestion import DataIngestion
+from src.components.data_transformation import DataTransformation
 
 class Predict_Pipeline:
     def __init__(self):

@@ -1,6 +1,7 @@
 pandas
 numpy
 seaborn
+logger
 flask
 scikit-learn
 -e .

@@ -1,9 +1,8 @@
 import os
 import sys
 import pickle
-sys.path.insert(0, 'D:\Laptop_Price_Prediction\src')
-from logger import logging
-from exception import CustomException
+from src.logger import logging
+from src.exception import CustomException
 from sklearn.metrics import r2_score
 
 def save_object(path,object):

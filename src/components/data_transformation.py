@@ -2,10 +2,9 @@ import os
 import sys
 import pandas as pd
 import numpy as np
-sys.path.insert(0, 'D:\Laptop_Price_Prediction\src')
-from logger import logging
-from exception import CustomException
-from utils import *
+from src.logger import logging
+from src.exception import CustomException
+from src.utils import *
 from dataclasses import dataclass
 from scipy.sparse import csr_matrix
 from sklearn.preprocessing import OneHotEncoder
